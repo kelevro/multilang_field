@@ -28,7 +28,7 @@ $ rake g multilang_field:install
 
 Use in view
 ```erb
-  <%= form_for @article %>
+  <%= form_for @article do |form| %>
     <%= multilang_wrapper(:title) { |attribute| form.input(attribute) } %>
   <% end %>
 ```
