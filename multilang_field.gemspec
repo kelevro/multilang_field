@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = MultilangField::VERSION
   s.authors     = ['Anton Holovko']
   s.email       = ['anton.holovko.b@gmail.com']
-  s.homepage    = 'TODO'
-  s.summary     = 'TODO: Summary of MultilangField.'
-  s.description = 'TODO: Description of MultilangField.'
+  s.homepage    = 'https://github.com/kelevro/multilang_field'
+  s.summary     = 'MultilangField'
+  s.description = 'Multilang form field wrapper'
   s.license     = 'MIT'
 
   s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + Dir['MIT-LICENSE', 'Rakefile', 'README.rdoc']
