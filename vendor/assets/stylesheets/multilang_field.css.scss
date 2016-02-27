@@ -1,0 +1,25 @@
+.multilang-field-container {
+  position: relative;
+
+  .nav.nav-tabs {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+
+    li {
+      display: inline-block;
+      float: none;
+    }
+  }
+
+  .tab-content {
+    padding-top: 40px;
+
+    label {
+      position: absolute;
+      top: 10px;
+    }
+  }
+}
