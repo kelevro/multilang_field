@@ -8,7 +8,7 @@ gem 'multilang_field'
 ### Run generator
 ```console
 $ bundle install
-$ rake g multilang_field:install
+$ rails g multilang_field:install
 ```
 
 `application.js`
@@ -20,8 +20,8 @@ $ rake g multilang_field:install
 `application.css.scss`
 ```scss
  *= require multilang_field
- 
- 
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 ```

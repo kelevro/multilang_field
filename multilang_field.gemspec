@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + Dir['MIT-LICENSE', 'Rakefile', 'README.rdoc']
   s.require_path = ['lib']
 
-  s.add_dependency 'rails', '~> 4.2.5.1'
-  s.add_dependency 'globalize', '~> 5.0.0'
+  s.add_dependency 'rails'
+  s.add_dependency 'globalize'
   s.add_dependency 'globalize-accessors'
   s.add_dependency 'slim'
   s.add_dependency 'sass-rails'

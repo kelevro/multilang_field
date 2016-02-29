@@ -3,10 +3,10 @@ PATH
   specs:
     multilang_field (0.0.1)
       bootstrap-sass
-      globalize (~> 5.0.0)
+      globalize
       globalize-accessors
       jquery-rails
-      rails (~> 4.2.5.1)
+      rails
       sass-rails
       simple_form
       slim
