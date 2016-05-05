@@ -6,6 +6,7 @@ module MultilangField
 
       def view_template
         template 'app/views/multilang_field/_wrapper.html.slim'
+        copy_file 'app/views/multilang_field/_nested_wrapper.html.erb'
       end
     end
   end
