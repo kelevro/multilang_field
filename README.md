@@ -1,23 +1,34 @@
 # Multilang Field Wrapper
 
-### Install
+###Dependencies
+
 ```ruby
-gem 'multilang_field'
+gem 'globalize', '~> 5.0.0'
+gem 'globalize-accessors'
+```
+
+### Install
+
+```ruby
+gem 'multilang_field', github: 'kelevro/multilang_field'
 ```
 
 ### Run generator
+
 ```console
 $ bundle install
 $ rails g multilang_field:install
 ```
 
-`application.js`
+in `application.js` add
+
 ```js
 //= require jquery
 //= require bootstrap-sprockets
 ```
 
-`application.css.scss`
+in `application.css.scss` add
+
 ```scss
  *= require multilang_field
 
@@ -26,12 +37,32 @@ $ rails g multilang_field:install
  @import "bootstrap";
 ```
 
-Use in view
-```erb
-  <%= form_for @article do |form| %>
-    <%= multilang_wrapper(:title) { |attribute| form.input(attribute) } %>
-  <% end %>
+example:
+
+```ruby
+class ArticlesController < ApplicationController
+  ...
+  def article_params
+    article = Article.globalize_attribute_names
+    article += [:some_other_params]
+    params.require(:article).permit(*article)
+  end
+end
+
+class Article < ActiveRecord::Base
+  translates :title, :description, fallbacks_for_empty_translations: true
+  globalize_accessors
+  ...
+end
 ```
+
+```erb
+<%= form_for @article do |form| %>
+  <%= multilang_wrapper(:title) { |attribute| form.input(attribute) } %>
+<% end %>
+```
+
+![Usage](vendor/assets/images/use_field.gif)
 
 ## TODO
   * TDD
