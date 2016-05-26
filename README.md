@@ -1,5 +1,12 @@
 # Multilang Field Wrapper
 
+This gem improves standard input fields , he adds tabs for all the languages ​​with which you can easily edit all translations at once
+
+####It allows:
+
+* Submit form with all translations at once
+* Use this inputs with nested attributes
+
 ###Dependencies
 
 ```ruby
@@ -61,6 +68,14 @@ end
   <%= multilang_wrapper(:title) { |attribute| form.input(attribute) } %>
 <% end %>
 ```
+for nested attributes:
+
+```erb
+<%= form_for @article do |form| %>
+  <%= nested_multilang_wrapper(:title) { |attribute| form.input(attribute) } %>
+<% end %>
+```
+
 
 ![Usage](vendor/assets/images/use_field.gif)
 
