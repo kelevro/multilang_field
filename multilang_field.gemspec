@@ -26,8 +26,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-rails'
   s.add_dependency 'simple_form'
 
-
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails'
-
 end
