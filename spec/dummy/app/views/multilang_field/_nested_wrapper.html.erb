@@ -1,0 +1,19 @@
+<div class="multilang-field-container">
+  <ul class="nav nav-tabs">
+    <% languages.each_with_index do |language, idx| %>
+      <li class="<%=  'active' if language.to_sym == I18n.locale %>">
+        <a href="<%= "##{attribute}_tab_#{language}" %>" data-toggle="tab">
+          <%= language.to_s.camelcase %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+  <div class="tab-content">
+    <% form.simple_fields_for :translations do |tf| %>
+      <div id="<%= "#{attribute}_tab_#{tf.object.locale}" %>"
+           class="tab-pane <%= 'active' if tf.object.locale == I18n.locale %>">
+           <%= block.call(tf) %>
+      </div>
+    <% end %>
+  </div>
+</div>
