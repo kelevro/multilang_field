@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    multilang_field (0.0.3)
+    multilang_field (0.0.4)
       bootstrap-sass
       globalize
       globalize-accessors
@@ -9,7 +9,6 @@ PATH
       rails
       sass-rails
       simple_form
-      slim
 
 GEM
   remote: https://rubygems.org/
@@ -180,6 +179,7 @@ DEPENDENCIES
   jquery-rails
   multilang_field!
   pry-byebug
+  rails (= 4.2.6)
   rspec-rails
   sass-rails
   simple_form

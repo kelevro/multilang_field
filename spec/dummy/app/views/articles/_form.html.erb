@@ -2,9 +2,13 @@
   <div class="col-sm-10">
     <%= simple_form_for(@article) do |f| %>
 
-      <%= multilang_wrapper(:title) { |attribute, label| f.input attribute, label: label } %>
+      <%= multilang_wrapper(f, :title) do |form, label|
+        form.input :title, label: label
+      end %>
 
-      <%= f.input :description %>
+      <%= multilang_wrapper(f, :description) do |form, label|
+        form.input(:description, label: label)
+       end %>
 
       <div class="actions">
         <%= f.submit %>

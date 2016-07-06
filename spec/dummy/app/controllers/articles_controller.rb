@@ -52,6 +52,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def article_params
-      params[:article].permit(*Article.globalize_attribute_names)
+      params[:article].permit(translations_attributes: [:id, :locale, :title, :description])
     end
 end
