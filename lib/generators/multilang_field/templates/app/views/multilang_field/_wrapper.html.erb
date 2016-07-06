@@ -1,9 +1,11 @@
 <div class="multilang-field-container">
   <fieldset>
     <legend><%= title %></legend>
-    <%= form.simple_fields_for :translations do |tf| %>
-        <%= tf.input_field :locale, as: :hidden %>
-        <%= block.call(tf, build_label(tf.object.locale)) %>
+    <% I18n.available_locales do |locale| %>
+        <%= form.simple_fields_for :translation, translation(form, locale) do |tf| %>
+            <%= tf.input_field :locale, as: :hidden %>
+            <%= block.call(tf, build_label(tf.object.locale)) %>
+        <% end %>
     <% end %>
   </fieldset>
 </div>

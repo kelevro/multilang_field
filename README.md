@@ -51,7 +51,7 @@ end
 ```ruby
 class ArticlesController < ApplicationController
   def article_params
-    attrs = {translations_attributes: [:id, :locale, :title, :description]}
+    attrs = [translations_attributes: [:id, :locale, :title, :description]]
     params.require(:article).permit(*attrs)
   end
 end
