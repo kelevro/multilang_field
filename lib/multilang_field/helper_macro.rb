@@ -1,7 +1,6 @@
 module MultilangField
   module HelperMacro
     def multilang_wrapper(form, attribute, label = nil, &block)
-      build_translations(form)
       render 'multilang_field/wrapper',
               title: title(attribute, label),
               form: form,
@@ -11,6 +10,13 @@ module MultilangField
     def build_label(lang)
       lang_list = MultilangField.language_list&.call || {}
       lang_list[lang] ? image_tag(lang_list[lang]) : lang.to_s.capitalize
+    end
+
+    def translation(form, locale)
+      form.object.translations.each do |translation|
+        return translation if translation.locale == locale
+      end
+      form.object.translations.build(locale: locale)
     end
 
     private
