@@ -8,6 +8,7 @@ module MultilangField
     end
 
     def build_label(lang)
+      lang = lang.to_sym
       lang_list = MultilangField.language_list&.call || {}
       lang_list[lang] ? image_tag(lang_list[lang]) : lang.to_s.capitalize
     end

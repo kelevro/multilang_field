@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    multilang_field (0.0.7)
+    multilang_field (0.0.8)
       bootstrap-sass
       globalize
       globalize-accessors
